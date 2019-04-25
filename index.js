@@ -7,6 +7,9 @@ mongoose.connect("mongodb://localhost:27017/expprac", {
   useNewUrlParser: true
 });
 const bodyParser = require("body-parser");
+// var callback = require("./callback/callback.js");
+// var mw = require("./my-middleware.js");
+// app.use(callback({ option1: "1", option2: "2" }));
 app.use(bodyParser.json());
 app.use("/HumanController", router);
 app.get("/", (req, res) => res.send("Hello World!"));
