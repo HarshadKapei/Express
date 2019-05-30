@@ -1,6 +1,8 @@
 var mongoose = require("mongoose");
 var human = require("../mongooseModel/Human");
-var callback = require("../callback/callback.js");
+const callback = require("../callback/callback.js");
+const express = require("express");
+const app = express();
 var model = {
   // save: (data, callback) => {
   //   console.log("dataaaaaaaaaaa", data);
@@ -16,7 +18,7 @@ var model = {
         callback("No data found", null);
       } else {
         console.log("111111111111111111111");
-        callback(null, saveData);
+        app.use(callback, callback(null, saveData));
       }
     });
   },
